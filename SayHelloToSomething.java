@@ -9,29 +9,34 @@ public class SayHelloToSomething {
     // The program starts here :
     public static void main(String[] args) {
     	windowClear();
-        sayHelloTo("world");
+        sayHelloTo("World");
+        displayDocumentationLink();
         programPause();
         windowClear();
     }
 
-    // Display "Hello ..."
+    // Displays "Hello ..."
     private static void sayHelloTo(String recipient) {
-        String sayHello = "\nhello world !";
-        String link = "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html";
-
+        String sayHello = "\nhello " + recipient + " !";
+        
         System.out.println(sayHello.toUpperCase());
         System.out.println(sayHello.toLowerCase());
         System.out.println(sayHello.replace("hello", "Hi"));
+    }
+
+    // Displays a link to the documentation.
+    private static void displayDocumentationLink() {
+        String link = "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html";
         System.out.println("\nTo learn more about \"String\", please, visit :\n" + link);
     }
 
-    // Stop the program (Windows).
+    // Stops the program (Windows).
     private static void programPause() {
         System.out.println("\nPress any key to leave and clear.");
         new java.util.Scanner(System.in).nextLine();
     }
 
-    // Clear the console (Windows cygdrive).
+    // Clears the console (Windows cygdrive).
     private static void windowClear() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
