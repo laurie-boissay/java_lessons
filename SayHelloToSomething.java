@@ -5,23 +5,36 @@ A simple program to say "Hello world".
 */
 
 public class SayHelloToSomething {
+	// Global scope constant :
+	static String sayHello = "\nHello ";
 
     // The program starts here :
     public static void main(String[] args) {
     	windowClear();
-        sayHelloTo("World");
+        sayHelloTo("world");
+        sayHiTo("people");
         displayDocumentationLink();
         programPause();
         windowClear();
     }
 
     // Displays "Hello ..."
-    private static void sayHelloTo(String recipient) {
-        String sayHello = "\nhello " + recipient + " !";
-        
+    private static void sayHelloTo(String recipient) {  
+        System.out.println(sayHello.toUpperCase() + recipient.toUpperCase() + " !");
+        System.out.println(sayHello.toLowerCase() + recipient.toLowerCase() + " !");
+    }
+
+    // Displays "Hi ..."
+    private static void sayHiTo(String recipient) {
+    	// Local scope variable :
+    	String anotherRecipient = "Ada";
+
+    	sayHello += recipient + " !"; 
+        System.out.println(sayHello.replace("Hello", "Hi"));
         System.out.println(sayHello.toUpperCase());
-        System.out.println(sayHello.toLowerCase());
-        System.out.println(sayHello.replace("hello", "Hi"));
+
+        sayHello = sayHello.replace(recipient, anotherRecipient);
+        System.out.println(sayHello);
     }
 
     // Displays a link to the documentation.
@@ -32,7 +45,7 @@ public class SayHelloToSomething {
 
     // Stops the program (Windows).
     private static void programPause() {
-        System.out.println("\nPress any key to leave and clear.");
+        System.out.println("\nPress the ENTER key to leave and clear.");
         new java.util.Scanner(System.in).nextLine();
     }
 
