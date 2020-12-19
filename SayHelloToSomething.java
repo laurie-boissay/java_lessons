@@ -30,7 +30,7 @@ public class SayHelloToSomething {
     	String anotherRecipient = "Ada";
 
     	sayHello += recipient + " !"; 
-        System.out.println(sayHello.replace("Hello", "Hi"));
+        sayHello = sayHello.replace("Hello", "Hi");
         System.out.println(sayHello.toUpperCase());
 
         sayHello = sayHello.replace(recipient, anotherRecipient);
