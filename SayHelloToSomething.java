@@ -7,6 +7,8 @@ A simple program to say "Hello world".
 public class SayHelloToSomething {
 	// Global scope constant :
 	static String sayHello = "\nHello ";
+	// Why the following line does not work ?
+	// String sayHello = "\nHello ";
 
     // The program starts here :
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class SayHelloToSomething {
         sayHelloTo("world");
         sayHiTo("people");
         displayDocumentationLink();
+        loopCounter();
         programPause();
         windowClear();
     }
@@ -28,6 +31,8 @@ public class SayHelloToSomething {
     private static void sayHiTo(String recipient) {
     	// Local scope variable :
     	String anotherRecipient = "Ada";
+    	// Why the following line does not work ?
+    	// static String anotherRecipient = "Ada";
 
     	sayHello += recipient + " !"; 
         sayHello = sayHello.replace("Hello", "Hi");
@@ -40,7 +45,21 @@ public class SayHelloToSomething {
     // Displays a link to the documentation.
     private static void displayDocumentationLink() {
         String link = "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html";
-        System.out.println("\nTo learn more about \"String\", please, visit :\n" + link);
+        System.out.println("\nTo learn more about \"String\", please, visit :\n" + link + "\n");
+    }
+
+    private static void loopCounter() {
+    	int i = 1;
+    	while (i <= 5) {
+    		printCounter(i);
+	    	i++;
+    	}
+
+    	System.out.println("\n");
+
+    	for (int j = 1; j <= 5; j++) {
+    		printCounter(j);
+    	}
     }
 
     // Stops the program (Windows).
@@ -53,6 +72,10 @@ public class SayHelloToSomething {
     private static void windowClear() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
+    }
+
+    private static void printCounter(int counter) {
+    	System.out.println("Counter : " + counter + ".");
     }
 
 }
