@@ -48,7 +48,7 @@ public class SayHelloToSomething {
         System.out.println("\nTo learn more about \"String\", please, visit :\n" + link + "\n");
     }
 
-    // Runs 2 kind of loop.
+    // Runs 3 kind of loop.
     private static void loopCounter() {
         int i = 1;
         while (i <= 5) {
@@ -61,6 +61,14 @@ public class SayHelloToSomething {
         for (int j = 1; j <= 5; j++) {
             printCounter(j);
         }
+
+        System.out.println("\n");
+
+        int k = 5;
+        do {
+            printCounter(k);
+        }
+        while(k < 5);
     }
 
     // Stops the program (Windows).
