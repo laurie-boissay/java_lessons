@@ -50,6 +50,8 @@ public class SayHelloToSomething {
 
     // Runs 3 kind of loop.
     private static void loopCounter() {
+
+        // While loop :
         int i = 1;
         while (i <= 5) {
             printCounter(i);
@@ -58,12 +60,34 @@ public class SayHelloToSomething {
 
         System.out.println("\n");
 
-        for (int j = 1; j <= 5; j++) {
-            printCounter(j);
+        // Declare an array :
+        int[] myArray = new int[]{12, 15, 18, 16};
+
+        // For loop :
+        for (int j = 0; j < myArray.length; j++) {
+            printCounter(myArray[j]);
         }
 
         System.out.println("\n");
 
+        // Simplified For loop :
+        for (int m: myArray) {
+            printCounter(m);  
+        }
+
+        System.out.println("\n");
+
+        for (int m: myArray) {
+            if (m == 12 || m == 15) {
+                continue;
+            } else {
+                printCounter(m);
+            }   
+        }
+
+        System.out.println("\n");
+
+        // Do while loop :
         int k = 5;
         do {
             printCounter(k);
