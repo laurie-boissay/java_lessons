@@ -18,35 +18,48 @@ public class Book {
     // The program starts here :
     public static void main(String[] args) {
         windowClear();
-        
-        displaySomething();
-        //createNewBook(); // ERROR : required: no arguments !!!
-        //changeValue(); // Doesn't work cause of createNewBook().
+
+        displayBook();
+        createBook();
+        displayBook();
 
         programPause();
         windowClear();
     }
 
-    // Display something to test the program :
-    private static void displaySomething() {
-        System.out.println(publisher);
-    }
-
     // Create a book :
-    /*
-    private static void createNewBook() {
-        Book firstBook = new Book("Coding is art", "Becky James", 425);
-        System.out.println(firstBook.title);
-    }
-    */
-
-    // Change a value :
-    /*
-    private static void changeValue() {
+    private static void createBook() {
+        Book firstBook = new Book();
+        firstBook.title = "Coding is art.";
+        firstBook.author = "Becky James";
         firstBook.numberOfPages = 425;
-        System.out.println(firstBook.numberOfPages);
+
+        firstBook.numberOfPages += 10;
+
+        System.out.println("\nCreated First Book :");
+        System.out.println("title : " + firstBook.title); 
+        System.out.println("Author : " + firstBook.author);
+        System.out.println("Number of pages : " + firstBook.numberOfPages);
+        System.out.println("Publisher : " + firstBook.publisher);
     }
-    */
+
+
+    // Display book properties :
+    private static void displayBook() {
+        System.out.println("\nDisplay Book :");
+
+        // The following lines doesn't work :
+        //System.out.println("title : " + firstBook.title); 
+        //System.out.println("Author : " + firstBook.author);
+        //System.out.println("Number of pages : " + firstBook.numberOfPages);
+        //System.out.println("Publisher : " + firstBook.publisher); 
+        
+        System.out.println("title : " + title);
+        System.out.println("Author : " + author);
+        System.out.println("Number of pages : " + numberOfPages);
+        System.out.println("Publisher : " + publisher);
+    }
+
 
     // Stops the program (Windows).
     private static void programPause() {
@@ -59,12 +72,9 @@ public class Book {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-
 }
 
 /*
-
-### HOW TO RUN THE PROGRAM WITHOUT IDE? ###
 
 1) Go to the program root :
 cd C:/Users/Jaenne/Documents/java_cours
